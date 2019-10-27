@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: pay3-spring-boot-admin
+  profiles:
+    active: local
+  cloud:
+    config:
+      profile: local
+      label: master
+
+---
+
+spring:
+  profiles: local
+  cloud:
+    config:
+      enabled: false
+      uri: http://127.0.0.1:8002
+  boot:
+    admin:
+      client:
+        url: http://127.0.0.1:9000
+        instance:
+          service-base-url: http://127.0.0.1:8002
